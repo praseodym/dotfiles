@@ -1,0 +1,55 @@
+[ui]
+username = Mark Janssen <mark@praseodym.net>
+ssh = ssh -C
+
+[extensions]
+convert=
+extdiff=
+graphlog=
+record=
+color=
+purge=
+mq=
+rebase=
+schemes=
+progress=
+transplant=
+relink=
+histedit=
+bookmarks=
+
+[mq]
+secret=True
+
+[alias]
+blame=annotate -u -n
+rec=record
+qstatus = status --rev -2:.
+slog  =  log --style=$HOME/.dotfiles/hg/mercurial-cli-templates/map-cmdline.slog
+nlog  =  log --style=$HOME/.dotfiles/hg/mercurial-cli-templates/map-cmdline.nlog
+dlog  =  log --style=$HOME/.dotfiles/hg/mercurial-cli-templates/map-cmdline.dlog
+sglog = glog --style=$HOME/.dotfiles/hg/mercurial-cli-templates/map-cmdline.sglog
+, = sglog -l10
+
+[extdiff]
+cmd.sbsdiff = diff
+opts.sbsdiff = -N -b --side-by-side --width=90
+cmd.kdiff3 =
+
+[schemes]
+bb = http://bitbucket.org/
+Ir = ssh://Ir/hg/
+Ir+hg = ssh://hg@hg.praseodym.net/
+frans = ssh://frans//var/lib/hg/
+eveoh = https://mark@projects.eveoh.nl/hg/
+
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+
+[auth]
+eveoh.prefix = projects.eveoh.nl/hg
+eveoh.username = mark
+eveoh.schemes = https
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output

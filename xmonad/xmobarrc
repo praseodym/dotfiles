@@ -1,0 +1,16 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 93
+       , lowerOnStart = True
+       , commands = [ Run Weather "EHEH" ["-t"," <tempC>C","-L","15","-H","25","--normal","green","--high","red","--low","lightblue"] 3600
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 15
+                    , Run Memory ["-t","Mem: <usedratio>%"] 30
+                    , Run Date "%a %b %_d %H:%M" "date" 15
+                    , Run StdinReader
+                    , Run CpuFreq ["-t","<cpu0>|<cpu1>GHz","-L","0","-H","1","-l","lightblue","-n","white","-h","red"] 20
+		    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% | <fc=#ee9a00>%date%</fc> |%EHEH%"
+       }

@@ -1,0 +1,53 @@
+[user]
+	name = Mark Janssen
+	email = mark@praseodym.net
+[core]
+	autocrlf = input
+	safecrlf = true
+	excludesfile = ~/.gitignore_global
+[github]
+	user = praseodym
+	# password = !security find-generic-password -gs github.password -w | tr -d '\n'
+	# token = !echo ~/.githubtoken 2> /dev/null
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	di = diff
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	cb = !git branch | grep ^* | cut -d' ' -f2
+	sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | xargs git show-branch $(git cb)
+	stofzuiger = !git branch --merged | grep -v '^*\\|master$' | xargs -n 1 git branch -d
+[color]
+	ui = true
+[merge]
+	tool = kdiff3
+[diff]
+	guitool = kdiff3
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+	# trustExitCode = false
+[difftool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+# [gist]
+	# private = true
+[rebase]
+	autosquash = true
+	autostash = true
+[rerere]
+	enabled = true
+[transfer]
+	fsckobjects = true
+[gpg]
+	program = gpg2
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

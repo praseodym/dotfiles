@@ -1,0 +1,14 @@
+defbce off
+defc1 off
+defflow off
+shell /bin/zsh
+vbell on
+caption always '%{=b Y}%H%011=%{=b b}%-Lw%{ Br}%n%f* %t%{-}%+Lw'
+# hardstatus alwayslastline "%{=}%-w%{+b w}%n %t%{-b w}%+w %=%c"
+startup_message off
+
+# caption always '%{= wk} %200` %= %100` %='
+# hardstatus alwayslastline '%{= M} %H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c '
+
+# caption     always        "%{+b rk}%H%{gk} |%c %{yk}%d.%m.%Y | %72=Load: %l %{wk}"
+# hardstatus alwayslastline "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
