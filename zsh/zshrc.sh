@@ -34,7 +34,8 @@ zstyle ':completion:*' completer _complete _match _approximate
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast osx brew gradle mercurial rvm extract mvn rsync textmate sublime autojump virtualenvwrapper)
+# plugins=(gitfast osx brew gradle mercurial rvm extract mvn rsync textmate sublime autojump virtualenvwrapper)
+plugins=(gitfast debian gradle mercurial rvm extract mvn rsync autojump)
 
 source $ZSH/oh-my-zsh.sh
 if [[ -o LOGIN ]]; then
