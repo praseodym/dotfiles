@@ -13,7 +13,7 @@ HOSTNAME=$(hostname)
 mkdir -p ~/.ssh
 
 ln -fs $SCRIPTDIR/zsh/zshrc.sh ~/.zshrc
-ln -fs $SCRIPTDIR/git/gitconfig ~/.gitconfig
+stow git
 ln -fs $SCRIPTDIR/emacs/emacs ~/.emacs
 stow vim
 stow fish
