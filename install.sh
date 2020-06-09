@@ -10,14 +10,13 @@ git submodule update --init --recursive
 
 HOSTNAME=$(hostname)
 
-mkdir -p ~/.ssh ~/.vim
+mkdir -p ~/.ssh
 
 ln -fs $SCRIPTDIR/zsh/zshrc.sh ~/.zshrc
 ln -fs $SCRIPTDIR/hg/hgrc ~/.hgrc
 ln -fs $SCRIPTDIR/git/gitconfig ~/.gitconfig
 ln -fs $SCRIPTDIR/emacs/emacs ~/.emacs
-ln -fs $SCRIPTDIR/vim/vimrc ~/.vimrc
-ln -fns $SCRIPTDIR/vim/colors ~/.vim/colors
+stow vim
 ln -fs $SCRIPTDIR/sbt/sbtconfig ~/.sbtconfig
 ln -fs $SCRIPTDIR/screen/screenrc ~/.screenrc
 
