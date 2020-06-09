@@ -16,6 +16,7 @@ ln -fs $SCRIPTDIR/zsh/zshrc.sh ~/.zshrc
 ln -fs $SCRIPTDIR/git/gitconfig ~/.gitconfig
 ln -fs $SCRIPTDIR/emacs/emacs ~/.emacs
 stow vim
+stow fish
 ln -fs $SCRIPTDIR/sbt/sbtconfig ~/.sbtconfig
 ln -fs $SCRIPTDIR/screen/screenrc ~/.screenrc
 
