@@ -1,6 +1,7 @@
 [user]
 	name = Mark Janssen
 	email = 20283+praseodym@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH7IFN/aHdLZx7oAlO6NYfmVsVNefhFO2I1utH8rGi2e
 [core]
 	autocrlf = input
 	safecrlf = true
@@ -18,7 +19,7 @@
 	dump = cat-file -p
 	cb = !git branch | grep ^* | cut -d' ' -f2
 	sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | xargs git show-branch $(git cb)
-	stofzuiger = !git branch --merged | grep -v '^*\\|master$' | xargs -n 1 git branch -d
+	stofzuiger = !git branch --merged | grep -Ev '^\\*|master$|main$' | xargs -n 1 git branch -d
 [color]
 	ui = true
 [merge]
@@ -33,10 +34,17 @@
 [rerere]
 	enabled = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [pull]
 	ff = only
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
