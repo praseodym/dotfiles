@@ -1,11 +1,11 @@
 [user]
 	name = Mark Janssen
 	email = 20283+praseodym@users.noreply.github.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH7IFN/aHdLZx7oAlO6NYfmVsVNefhFO2I1utH8rGi2e
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ1Nv7ece6h+40+vweGug1i7p8eAg8e/Sk0HRtfbqbBY
 [core]
 	autocrlf = input
 	safecrlf = true
-	excludesfile = ~/.gitignore_global
+	excludesFile = ~/.gitignore
 [github]
 	user = praseodym
 [alias]
