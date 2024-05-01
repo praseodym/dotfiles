@@ -20,12 +20,21 @@
 	cb = !git branch | grep ^* | cut -d' ' -f2
 	sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | xargs git show-branch $(git cb)
 	stofzuiger = !git branch --merged | grep -Ev '^\\*|master$|main$' | xargs -n 1 git branch -d
+	dft = difftool
+	dlog = "-c diff.external=difft log -p --ext-diff"
 [color]
 	ui = true
 [merge]
 	tool = kdiff3
 [diff]
+	tool = difftastic
 	guitool = kdiff3
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
 [push]
 	default = simple
 [rebase]
